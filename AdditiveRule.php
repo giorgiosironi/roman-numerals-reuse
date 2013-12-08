@@ -1,6 +1,6 @@
 <?
 
-class AddictiveRule
+class AdditiveRule
 {
     public function additiveRepresentation($representation, $repetitions, $symbol)
     {

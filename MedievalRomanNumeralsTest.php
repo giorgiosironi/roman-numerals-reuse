@@ -4,7 +4,7 @@ class MedievalRomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        $this->system = new AddictiveAndSubtractiveNumeralSystem(
+        $this->system = new AdditiveAndSubtractiveNumeralSystem(
             $symbols = [
                 100 => new Symbol('C'),
                 50 => new Symbol('L'),

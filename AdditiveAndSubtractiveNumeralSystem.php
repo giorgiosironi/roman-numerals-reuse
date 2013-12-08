@@ -1,12 +1,12 @@
 <?php
 
-class AddictiveAndSubtractiveNumeralSystem
+class AdditiveAndSubtractiveNumeralSystem
 {
     public function __construct($symbols)
     {
         $this->symbols = $symbols;
         $this->subtractiveRule = new SubtractiveRule;
-        $this->additiveRule = new AddictiveRule;
+        $this->additiveRule = new AdditiveRule;
     }
 
     public function convert($number)
