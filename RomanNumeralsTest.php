@@ -23,8 +23,8 @@ class RomanNumeralSystem
                 }
             } else {
                 $representation[] = str_repeat($symbol, $repetitions);
-                $number -= $containedAmount * $repetitions;
             }
+            $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
             $lastSymbol = $symbol;
         }
@@ -98,6 +98,12 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertNotEquals('VIV', $this->system->convert(9));
         $this->assertEquals('IX', $this->system->convert(9));
+    }
+
+    // TODO: implementation details are leaking here
+    public function testSubtractiveRepresentationsAreRemovedFromTheNumberWhileItIsConverted()
+    {
+        $this->assertEquals('XLI', $this->system->convert(41));
     }
 
     public function testASymbolCannotBeSubtractedFromAVeryDistantSymbol()
