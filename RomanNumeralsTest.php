@@ -2,18 +2,16 @@
 
 class RomanNumeralSystem
 {
+    public function __construct($symbols)
+    {
+        $this->symbols = $symbols;
+    }
+
     public function convert($number)
     {
-        $symbols = [
-            100 => new Symbol('C'),
-            50 => new Symbol('L'),
-            10 => new Symbol('X'),
-            5 => new Symbol('V'),
-            1 => new Symbol('I'),
-        ];
         $representation = [];
         $lastSymbol = null;
-        foreach ($symbols as $containedAmount => $symbol) {
+        foreach ($this->symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
                 if (end($representation) == $lastSymbol) {
@@ -52,7 +50,15 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        $this->system = new RomanNumeralSystem();
+        $this->system = new RomanNumeralSystem(
+            $symbols = [
+                100 => new Symbol('C'),
+                50 => new Symbol('L'),
+                10 => new Symbol('X'),
+                5 => new Symbol('V'),
+                1 => new Symbol('I'),
+            ]
+        );
     }
 
     public function testOneIsConvertedToASingleI()
