@@ -9,7 +9,7 @@ class SubtractiveRule
         $this->lowerRepetitionsLimit = $lowerRepetitionsLimit;
     }
 
-    public function representationFor($representation, $repetitions, $symbol, $lastSymbol, $secondLastSymbol, $thirdLastSymbol = null)
+    public function representationFor($representation, $repetitions, $symbol/*[, $largerSymbol, $largerSymbol, ...]*/)
     {
         // TODO: complex code, unit test it
         // TODO: seems coupled to pieces of $representation
@@ -23,12 +23,12 @@ class SubtractiveRule
                 array_pop($representation);
                 if (isset($largerSymbols[3]) && end($representation) == $largerSymbols[2] . $largerSymbols[3]) {
                     array_pop($representation);
-                    $representation[] = $symbol . $thirdLastSymbol;
+                    $representation[] = $symbol . $largerSymbols[3];
                 } else {
-                    $representation[] = $symbol . $secondLastSymbol;
+                    $representation[] = $symbol . $largerSymbols[2];
                 }
             } else {
-                $representation[] = $symbol . $lastSymbol;
+                $representation[] = $symbol . $largerSymbols[1];
             }
         } 
         return $representation;
