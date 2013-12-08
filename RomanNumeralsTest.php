@@ -57,4 +57,10 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('XX', $this->system->convert(20));
     }
+
+    public function testASymbolCannotBeRepeatedMoreThan3Times()
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals('IV', $this->system->convert(4));
+    }
 }
