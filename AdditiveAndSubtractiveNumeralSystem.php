@@ -2,7 +2,7 @@
 
 class AdditiveAndSubtractiveNumeralSystem
 {
-    public function __construct($symbols)
+    public function __construct($symbols, array $rules)
     {
         $this->symbols = $symbols;
         $this->subtractiveRule = new SubtractiveRule;
