@@ -17,7 +17,7 @@ class RomanNumeralSystem
                     array_pop($representation);
                     $representation[] = 'IX';
                 } else {
-                    $representation[] = 'I' . $lastSymbol;
+                    $representation[] = $symbol . $lastSymbol;
                 }
             } else {
                 $representation[] = str_repeat($symbol, $repetitions);
