@@ -13,7 +13,7 @@ class RomanNumeralSystem
         foreach ($symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
-                return 'I' . $lastSymbol;
+                $representation .= 'I' . $lastSymbol;
             } else {
                 $representation .= str_repeat($symbol, $repetitions);
                 $number -= $containedAmount * $repetitions;
