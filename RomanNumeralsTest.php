@@ -24,6 +24,21 @@ class RomanNumeralSystem
     }
 }
 
+class Symbol
+{
+    private $representation;
+
+    public function __construct($representation)
+    {
+        $this->representation = $representation;
+    }
+
+    public function __toString()
+    {
+        return $this->representation;
+    }
+}
+
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
