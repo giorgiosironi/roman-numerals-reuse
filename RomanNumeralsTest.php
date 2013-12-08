@@ -88,10 +88,16 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('IV', $this->system->convert(4));
     }
 
-    // TODO: naming of these 2 tests
     public function testASymbolCannotBeRepeatedToBuildALargerExistingSymbolEvenIfOneOfTheRepetitionsIsSubtractedFrom()
     {
         $this->assertNotEquals('VIV', $this->system->convert(9));
         $this->assertEquals('IX', $this->system->convert(9));
+    }
+
+    public function testASymbolCannotBeSubtractedFromAVeryDistantSymbol()
+    {
+        $this->markTestIncomplete();
+        $this->assertNotEquals('IL', $this->system->convert(49));
+        $this->assertEquals('XLIX', $this->system->convert(49));
     }
 }
