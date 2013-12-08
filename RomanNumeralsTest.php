@@ -5,6 +5,7 @@ class RomanNumeralSystem
     public function convert($number)
     {
         $symbols = [
+            100 => new Symbol('C'),
             50 => new Symbol('L'),
             10 => new Symbol('X'),
             5 => new Symbol('V'),
@@ -77,6 +78,11 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     public function test50IsConvertedToANewSymbolL()
     {
         $this->assertEquals('L', $this->system->convert(50));
+    }
+
+    public function test100IsConvertedToANewSymbolC()
+    {
+        $this->assertEquals('C', $this->system->convert(100));
     }
 
     public function testSymbolsCanBeAddedTogetherToComposeNumbers()
