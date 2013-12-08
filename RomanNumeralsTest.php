@@ -14,9 +14,9 @@ class AddictiveAndSubtractiveNumeralSystem
         foreach ($this->symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
-                $representation = $this->subtractiveRepresentation($representation, $symbol,  $lastSymbol, $nextToLastSymbol);
+                $representation = $this->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
             } else {
-                $representation = $this->additiveRepresentation($representation, $symbol, $repetitions); 
+                $representation = $this->additiveRepresentation($representation, $repetitions, $symbol); 
             }
             $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
@@ -25,13 +25,13 @@ class AddictiveAndSubtractiveNumeralSystem
         return implode('', $representation);
     }
 
-    private function additiveRepresentation($representation, $symbol, $repetitions)
+    private function additiveRepresentation($representation, $repetitions, $symbol)
     {
         $representation[] = str_repeat($symbol, $repetitions);
         return $representation;
     }
 
-    private function subtractiveRepresentation($representation, $symbol, $lastSymbol, $nextToLastSymbol)
+    private function subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol)
     {
         if (end($representation) == $lastSymbol) {
             array_pop($representation);
