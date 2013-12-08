@@ -12,11 +12,13 @@ class AdditiveAndSubtractiveNumeralSystem
     {
         // TODO: extract Representation object
         $representation = [];
+        // TODO: passing null explicitly to a rule. Not good
         $lastSymbol = null;
         $nextToLastSymbol = null;
         foreach ($this->symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             foreach ($this->rules as $rule) {
+                // TODO: unclear and long signature
                 $representation = $rule->representationFor($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
             }
             $number -= $containedAmount * $repetitions;

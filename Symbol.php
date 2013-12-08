@@ -1,5 +1,6 @@
 <?php
 
+// TODO: does this class pulls its weight? Can it be eliminated?
 class Symbol
 {
     private $representation;

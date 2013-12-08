@@ -11,6 +11,8 @@ class SubtractiveRule
 
     public function representationFor($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol)
     {
+        // TODO: complex code, unit test it
+        // TODO: seems coupled to pieces of $representation
         if ($repetitions >= $this->lowerRepetitionsLimit) {
             if (end($representation) == $lastSymbol) {
                 array_pop($representation);
