@@ -1,0 +1,13 @@
+problems&actions (separate?)
+- how to change the contract between Presenter and collaborators
+-- unit test the collaborators to find out if it is good
+-- unit test them early!
+--- trade-off between
+---- knowing more about the problem before extraction
+---- having the feedback of unit tests earlier to decompose the problem
+- concentrate on names earlier
+- your estimates suck, am I wrong? probably need to timebox or add several Pomodoros.
+- produce more design choices before going down into one (e.g. rules for additional/subtractive. Why not other choices?)
+- produce more acceptance test cases that force internal refactoring. Otherwise you can get lost extracting and extracting without a direction. The additive-only acceptance tests worked well.
+- timebox design improvements and really throw away if they're not improving the situation
+
