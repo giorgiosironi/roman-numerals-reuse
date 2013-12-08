@@ -48,4 +48,14 @@ class SubtractiveRuleTest extends PHPUnit_Framework_TestCase
             $rule->representationFor([], 3, 'I', 'V', null)
         );
     }
+
+    public function testTheDistanceBetweenSymbolsThatCanBePutTogetherForSubtractionIsArbitrary()
+    {
+        $this->markTestIncomplete();
+        $rule = new SubtractiveRule(3);
+        $this->assertEquals(
+            ['IC'],
+            $rule->representationFor(['XC', 'V'], 4, 'I', 'V', 'X', 'L', 'C')
+        );
+    }
 }
