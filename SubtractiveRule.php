@@ -37,9 +37,9 @@ class SubtractiveRule
             || end($representation) == $testForPresence) {
             array_pop($representation);
             return $this->foo($representation, $whatToSubtract, $largerSymbols, $i + 1);
-        } else {
-            $representation[] = $whatToSubtract . $largerSymbols[$i];
-            return $representation;
         }
+
+        $representation[] = $whatToSubtract . $largerSymbols[$i];
+        return $representation;
     }
 }
