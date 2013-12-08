@@ -117,4 +117,10 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertNotEquals('IL', $this->system->convert(49));
         $this->assertEquals('XLIX', $this->system->convert(49));
     }
+
+    public function testASymbolCannotBeSubtractedFromAVeryDistantSymbol_2()
+    {
+        $this->assertNotEquals('IC', $this->system->convert(99));
+        $this->assertEquals('XCIX', $this->system->convert(99));
+    }
 }
