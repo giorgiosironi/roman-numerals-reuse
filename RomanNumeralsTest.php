@@ -10,6 +10,8 @@ class RomanNumeralSystem
             10 => 'X',
         ];
         $representation = '';
+        foreach ($symbols as $containedAmount => $symbol) {
+        }
         while ($number >= 10) {
             $representation .= $symbols[10];
             $number -= 10;
