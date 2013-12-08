@@ -17,7 +17,7 @@ class RomanNumeralSystem
             $representation = $symbols[5];
             $number -= 5;
         }
-            $representation .= str_repeat($symbols[1], $number);
+        $representation .= str_repeat($symbols[1], $number);
         return $representation;
     }
 }
@@ -51,7 +51,6 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
     public function testSymbolsCanBeAddedTogetherToComposeNumbers()
     {
-        $this->markTestIncomplete();
         $this->assertEquals('XI', $this->system->convert(11));
     }
 
