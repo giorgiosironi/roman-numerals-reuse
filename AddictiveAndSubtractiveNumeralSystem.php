@@ -5,6 +5,7 @@ class AddictiveAndSubtractiveNumeralSystem
     public function __construct($symbols)
     {
         $this->symbols = $symbols;
+        $this->subtractiveRule = new SubtractiveRule;
     }
 
     public function convert($number)
@@ -15,7 +16,7 @@ class AddictiveAndSubtractiveNumeralSystem
         foreach ($this->symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
-                $representation = $this->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
+                $representation = $this->subtractiveRule->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
             } else {
                 $representation = $this->additiveRepresentation($representation, $repetitions, $symbol); 
             }
