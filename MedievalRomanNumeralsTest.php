@@ -1,6 +1,6 @@
 <?php
 
-class RomanNumeralsTest extends PHPUnit_Framework_TestCase
+class MedievalRomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
