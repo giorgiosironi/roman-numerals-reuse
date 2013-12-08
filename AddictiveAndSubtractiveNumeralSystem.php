@@ -6,6 +6,7 @@ class AddictiveAndSubtractiveNumeralSystem
     {
         $this->symbols = $symbols;
         $this->subtractiveRule = new SubtractiveRule;
+        $this->additiveRule = new AddictiveRule;
     }
 
     public function convert($number)
@@ -18,7 +19,7 @@ class AddictiveAndSubtractiveNumeralSystem
             if ($repetitions > 3) {
                 $representation = $this->subtractiveRule->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
             } else {
-                $representation = $this->additiveRepresentation($representation, $repetitions, $symbol); 
+                $representation = $this->additiveRule->additiveRepresentation($representation, $repetitions, $symbol); 
             }
             $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
