@@ -28,4 +28,15 @@ class SubtractiveRuleTest extends PHPUnit_Framework_TestCase
             $rule->representationFor(['V'], 2, null, null, null)
         );
     }
+
+    public function testSubtractsASymbolFromAVeryFarOneIfItIsAskedTo()
+    {
+        $rule = new SubtractiveRule(3);
+        // wrong according to known Roman rules
+        // but this object may support different numeral systems
+        $this->assertEquals(
+            ['IL'],
+            $rule->representationFor(['XL', 'V'], 4, 'I', 'V', 'X', 'L')
+        );
+    }
 }
