@@ -31,13 +31,13 @@ class SubtractiveRule
         $testForPresence = '';
         for ($j = $i; $j < count($largerSymbols); $j++) {
             $testForPresence .= $largerSymbols[$j];
-        }
-
         if (end($representation) == $largerSymbols[$i]
             || end($representation) == $testForPresence) {
             array_pop($representation);
             return $this->foo($representation, $whatToSubtract, $largerSymbols, $i + 1);
         }
+        }
+
 
         $representation[] = $whatToSubtract . $largerSymbols[$i];
         return $representation;
