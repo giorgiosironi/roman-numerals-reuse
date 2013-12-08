@@ -9,6 +9,7 @@ class AddictiveAndSubtractiveNumeralSystem
 
     public function convert($number)
     {
+        // TODO: extract Representation object
         $representation = [];
         $lastSymbol = null;
         foreach ($this->symbols as $containedAmount => $symbol) {
