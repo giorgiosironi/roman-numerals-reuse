@@ -18,7 +18,9 @@ class SubtractiveRule
         array_shift($arguments);
         $largerSymbols = $arguments;
         // $largerSymbols[0] not used
-        if ($repetitions >= $this->lowerRepetitionsLimit) {
+        if ($repetitions < $this->lowerRepetitionsLimit) {
+            return $representation;
+        }
             if (end($representation) == $largerSymbols[1]) {
                 array_pop($representation);
                 if (isset($largerSymbols[3]) && end($representation) == $largerSymbols[2] . $largerSymbols[3]) {
@@ -30,7 +32,6 @@ class SubtractiveRule
             } else {
                 $representation[] = $symbol . $largerSymbols[1];
             }
-        } 
         return $representation;
     }
 }
