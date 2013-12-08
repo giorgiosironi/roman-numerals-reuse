@@ -9,18 +9,18 @@ class RomanNumeralSystem
             5 => new Symbol('V'),
             1 => new Symbol('I'),
         ];
-        $representation = '';
+        $representation = [];
         foreach ($symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
-                $representation .= 'I' . $lastSymbol;
+                $representation[] = 'I' . $lastSymbol;
             } else {
-                $representation .= str_repeat($symbol, $repetitions);
+                $representation[] = str_repeat($symbol, $repetitions);
                 $number -= $containedAmount * $repetitions;
             }
             $lastSymbol = $symbol;
         }
-        return $representation;
+        return implode('', $representation);
     }
 }
 
