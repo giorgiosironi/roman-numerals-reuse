@@ -16,9 +16,8 @@ class RomanNumeralSystem
         } else if ($number >= 5) {
             $representation = $symbols[5];
             $number -= 5;
-        } else {
-            $representation = str_repeat($symbols[1], $number);
         }
+            $representation .= str_repeat($symbols[1], $number);
         return $representation;
     }
 }
