@@ -33,7 +33,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('I', $this->system->convert(1));
     }
 
-    public function testTwoIsConvertedToAPairOfI()
+    public function testSymbolsCanBeRepeatedToFormLargerNumbers()
     {
         $this->assertEquals('II', $this->system->convert(2));
     }
