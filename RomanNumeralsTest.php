@@ -13,7 +13,11 @@ class RomanNumeralSystem
         foreach ($symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
-                $representation[] = 'I' . $lastSymbol;
+                if (end($representation) == 'V') {
+                    $representation = ['IX'];
+                } else {
+                    $representation[] = 'I' . $lastSymbol;
+                }
             } else {
                 $representation[] = str_repeat($symbol, $repetitions);
                 $number -= $containedAmount * $repetitions;
@@ -84,7 +88,6 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     // TODO: naming of these 2 tests
     public function testASymbolCannotBeRepeatedToBuildALargerExistingSymbolEvenIfOneOfTheRepetitionsIsSubtractedFrom()
     {
-        $this->markTestIncomplete();
         $this->assertNotEquals('VIV', $this->system->convert(9));
         $this->assertEquals('IX', $this->system->convert(9));
     }
