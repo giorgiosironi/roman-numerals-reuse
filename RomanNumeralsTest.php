@@ -5,9 +5,9 @@ class RomanNumeralSystem
     public function convert($number)
     {
         $symbols = [
-            10 => 'X',
-            5 => 'V',
-            1 => 'I',
+            10 => new Symbol('X'),
+            5 => new Symbol('V'),
+            1 => new Symbol('I'),
         ];
         $representation = '';
         foreach ($symbols as $containedAmount => $symbol) {
