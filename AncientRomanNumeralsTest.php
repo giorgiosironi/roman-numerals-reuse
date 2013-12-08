@@ -20,5 +20,8 @@ class AncientRomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('IIII', $this->system->convert(4));
     }
 
-    // testSymbolsCannotBeRepeatedIfThereAreLargerSymbolsThatCoverTheSameAmount
+    public function testSymbolsCannotBeRepeatedIfThereAreLargerSymbolsThatCoverTheSameAmount()
+    {
+        $this->assertEquals('VIIII', $this->system->convert(9));
+    }
 }
