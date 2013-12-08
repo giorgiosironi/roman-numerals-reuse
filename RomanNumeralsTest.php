@@ -6,8 +6,12 @@ class RomanNumeralSystem
     {
         $symbols = [
             1 => 'I',
-            5 => 'V'
+            5 => 'V',
+            10 => 'X',
         ];
+        if ($number == 10) {
+            return $symbols[10];
+        }
         if ($number == 5) {
             return $symbols[5];
         }
@@ -35,5 +39,10 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     public function test5IsConvertedToANewSymbolV()
     {
         $this->assertEquals('V', $this->system->convert(5));
+    }
+
+    public function test10IsConvertedToANewSymbolX()
+    {
+        $this->assertEquals('X', $this->system->convert(10));
     }
 }
