@@ -10,12 +10,13 @@ class RomanNumeralSystem
             1 => new Symbol('I'),
         ];
         $representation = [];
+        $lastSymbol = null;
         foreach ($symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
                 if (end($representation) == $lastSymbol) {
                     array_pop($representation);
-                    $representation[] = $symbol . 'X';
+                    $representation[] = $symbol . $nextToLastSymbol;
                 } else {
                     $representation[] = $symbol . $lastSymbol;
                 }
@@ -23,6 +24,7 @@ class RomanNumeralSystem
                 $representation[] = str_repeat($symbol, $repetitions);
                 $number -= $containedAmount * $repetitions;
             }
+            $nextToLastSymbol = $lastSymbol;
             $lastSymbol = $symbol;
         }
         return implode('', $representation);
