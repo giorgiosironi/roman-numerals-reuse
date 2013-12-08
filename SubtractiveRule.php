@@ -2,7 +2,7 @@
 
 class SubtractiveRule
 {
-    public function subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol)
+    public function representationFor($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol)
     {
         if ($repetitions > 3) {
 
