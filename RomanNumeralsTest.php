@@ -12,13 +12,12 @@ class RomanNumeralSystem
         $representation = '';
         if ($number == 10) {
             $representation = $symbols[10];
-            return $representation;
         } else if ($number == 5) {
             $representation = $symbols[5];
-            return $representation;
         } else {
-            return str_repeat($symbols[1], $number);
+            $representation = str_repeat($symbols[1], $number);
         }
+        return $representation;
     }
 }
 
