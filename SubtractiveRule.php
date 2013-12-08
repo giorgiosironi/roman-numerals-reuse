@@ -21,7 +21,7 @@ class SubtractiveRule
         if ($repetitions < $this->lowerRepetitionsLimit) {
             return $representation;
         }
-
+        $symbol = str_repeat($symbol, 5-$repetitions);
         return $this->foo($representation, $symbol, $largerSymbols, 1);
     }
 
