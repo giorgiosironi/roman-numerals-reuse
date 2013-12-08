@@ -17,11 +17,8 @@ class AdditiveAndSubtractiveNumeralSystem
         $nextToLastSymbol = null;
         foreach ($this->symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
-            if ($repetitions > 3) {
                 $representation = $this->subtractiveRule->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
-            } else {
                 $representation = $this->additiveRule->additiveRepresentation($representation, $repetitions, $symbol); 
-            }
             $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
             $lastSymbol = $symbol;
