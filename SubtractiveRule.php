@@ -39,6 +39,11 @@ class SubtractiveRule
 
     private function foo($representation, $symbol, array $largerSymbols, $i)
     {
+        $testForPresence = '';
+        for ($j = $i; $j < count($largerSymbols); $j++) {
+            $testForPresence .= $largerSymbols[$j];
+        }
+
         if (end($representation) == $largerSymbols[$i]
         || (isset($largerSymbols[$i+1]) && end($representation) == $largerSymbols[$i] . $largerSymbols[$i+1])) {
             array_pop($representation);
