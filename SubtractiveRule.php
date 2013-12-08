@@ -12,7 +12,7 @@ class SubtractiveRule
         } else {
             $representation[] = $symbol . $lastSymbol;
         }
+        } 
         return $representation;
-        }
     }
 }
