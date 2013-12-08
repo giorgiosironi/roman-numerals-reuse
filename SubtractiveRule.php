@@ -21,17 +21,28 @@ class SubtractiveRule
         if ($repetitions < $this->lowerRepetitionsLimit) {
             return $representation;
         }
-            if (end($representation) == $largerSymbols[1]) {
+
+        if (end($representation) == $largerSymbols[1]) {
+            array_pop($representation);
+            if (isset($largerSymbols[3]) && end($representation) == $largerSymbols[2] . $largerSymbols[3]) {
                 array_pop($representation);
-                if (isset($largerSymbols[3]) && end($representation) == $largerSymbols[2] . $largerSymbols[3]) {
-                    array_pop($representation);
-                    $representation[] = $symbol . $largerSymbols[3];
-                } else {
-                    $representation[] = $symbol . $largerSymbols[2];
-                }
+                $representation[] = $symbol . $largerSymbols[3];
             } else {
-                $representation[] = $symbol . $largerSymbols[1];
+                $representation[] = $symbol . $largerSymbols[2];
             }
+        } else {
+            $representation[] = $symbol . $largerSymbols[1];
+        }
         return $representation;
+    }
+
+    private function foo($representation, $symbol, array $largerSymbols, $i)
+    {
+        if (isset($largerSymbols[$i]) && end($representation) == $largerSymbols[$i]) {
+            array_pop($representation);
+            return $this->foo($representation, $symbol, $largerSymbols, $i + 1);
+        } else {
+            $representation[] = $symbol . $largerSymbols[$i];
+        }
     }
 }
