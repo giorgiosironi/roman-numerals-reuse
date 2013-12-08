@@ -45,7 +45,7 @@ class SubtractiveRule
         }
 
         if (end($representation) == $largerSymbols[$i]
-        || (isset($largerSymbols[$i+1]) && end($representation) == $largerSymbols[$i] . $largerSymbols[$i+1])) {
+            || end($representation) == $testForPresence) {
             array_pop($representation);
             return $this->foo($representation, $symbol, $largerSymbols, $i + 1);
         } else {
