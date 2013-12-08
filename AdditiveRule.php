@@ -4,7 +4,9 @@ class AdditiveRule
 {
     public function additiveRepresentation($representation, $repetitions, $symbol)
     {
-        $representation[] = str_repeat($symbol, $repetitions);
+        if ($repetitions <= 3) {
+            $representation[] = str_repeat($symbol, $repetitions);
+        }
         return $representation;
     }
 }
