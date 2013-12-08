@@ -4,10 +4,14 @@ class RomanNumeralSystem
 {
     public function convert($number)
     {
+        $symbols = [
+            1 => 'I',
+            5 => 'V'
+        ];
         if ($number == 5) {
-            return 'V';
+            return $symbols[5];
         }
-        return str_repeat('I', $number);
+        return str_repeat($symbols[1], $number);
     }
 }
 
