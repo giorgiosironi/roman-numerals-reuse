@@ -14,13 +14,11 @@ class AdditiveAndSubtractiveNumeralSystem
         // TODO: extract Representation object
         $representation = [];
         $lastSymbol = null;
+        $nextToLastSymbol = null;
         foreach ($this->symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
-                $maybeRepresentation = $this->subtractiveRule->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
-                if ($maybeRepresentation !== null) {
-                    $representation = $maybeRepresentation;
-                }
+                $representation = $this->subtractiveRule->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
             } else {
                 $representation = $this->additiveRule->additiveRepresentation($representation, $repetitions, $symbol); 
             }
