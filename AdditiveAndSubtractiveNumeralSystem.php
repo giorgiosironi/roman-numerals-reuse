@@ -26,21 +26,4 @@ class AdditiveAndSubtractiveNumeralSystem
         }
         return implode('', $representation);
     }
-
-    private function additiveRepresentation($representation, $repetitions, $symbol)
-    {
-        $representation[] = str_repeat($symbol, $repetitions);
-        return $representation;
-    }
-
-    private function subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol)
-    {
-        if (end($representation) == $lastSymbol) {
-            array_pop($representation);
-            $representation[] = $symbol . $nextToLastSymbol;
-        } else {
-            $representation[] = $symbol . $lastSymbol;
-        }
-        return $representation;
-    }
 }
