@@ -13,8 +13,8 @@ class MedievalRomanNumeralsTest extends PHPUnit_Framework_TestCase
                 1 => new Symbol('I'),
             ],
             [
-                new SubtractiveRule(),
-                new AdditiveRule()
+                new SubtractiveRule(4),
+                new AdditiveRule(3)
             ]
         );
     }
