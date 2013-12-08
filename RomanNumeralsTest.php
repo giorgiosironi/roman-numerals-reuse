@@ -21,13 +21,18 @@ class AddictiveAndSubtractiveNumeralSystem
                     $representation[] = $symbol . $lastSymbol;
                 }
             } else {
-                $representation[] = str_repeat($symbol, $repetitions);
+                $representation[] = $this->additiveRepresentation($symbol, $repetitions); 
             }
             $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
             $lastSymbol = $symbol;
         }
         return implode('', $representation);
+    }
+
+    private function additiveRepresentation($symbol, $repetitions)
+    {
+        return str_repeat($symbol, $repetitions);
     }
 }
 
