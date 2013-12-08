@@ -65,4 +65,11 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('IV', $this->system->convert(4));
     }
+
+    // TODO: naming of these 2 tests
+    public function testASymbolMustBeSubtractedFromTheLargerSymbolNearestToTheNumber()
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals('IX', $this->system->convert(9));
+    }
 }
