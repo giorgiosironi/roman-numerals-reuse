@@ -10,14 +10,13 @@ class RomanNumeralSystem
             1 => 'I',
         ];
         $representation = '';
-        /*
+        $numberToDecrease = $number;
         foreach ($symbols as $containedAmount => $symbol) {
-            while ($number >= $containedAmount) {
+            while ($numberToDecrease >= $containedAmount) {
                 $representation .= $symbol;
-                $number -= $containedAmount;
+                $numberToDecrease -= $containedAmount;
             }
         }
-         */
         $representation = '';
         while ($number >= 10) {
             $representation .= $symbols[10];
