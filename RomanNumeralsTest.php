@@ -9,13 +9,16 @@ class RomanNumeralSystem
             5 => 'V',
             10 => 'X',
         ];
+        $representation = '';
         if ($number == 10) {
-            return $symbols[10];
+            $representation = $symbols[10];
+            return $representation;
+        } else if ($number == 5) {
+            $representation = $symbols[5];
+            return $representation;
+        } else {
+            return str_repeat($symbols[1], $number);
         }
-        if ($number == 5) {
-            return $symbols[5];
-        }
-        return str_repeat($symbols[1], $number);
     }
 }
 
