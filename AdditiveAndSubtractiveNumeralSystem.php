@@ -6,8 +6,6 @@ class AdditiveAndSubtractiveNumeralSystem
     {
         $this->symbols = $symbols;
         $this->rules = $rules;
-        $this->subtractiveRule = new SubtractiveRule;
-        $this->additiveRule = new AdditiveRule;
     }
 
     public function convert($number)

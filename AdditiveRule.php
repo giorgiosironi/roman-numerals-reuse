@@ -2,14 +2,16 @@
 
 class AdditiveRule
 {
-    public function __construct($limit = 3)
+    private $upperRepetitionsLimit;
+    
+    public function __construct($upperRepetitionsLimit)
     {
-        $this->limit = $limit;
+        $this->upperRepetitionsLimit = $upperRepetitionsLimit;
     }
 
     public function representationFor($representation, $repetitions, $symbol)
     {
-        if ($repetitions <= $this->limit) {
+        if ($repetitions <= $this->upperRepetitionsLimit) {
             $representation[] = str_repeat($symbol, $repetitions);
         }
         return $representation;
