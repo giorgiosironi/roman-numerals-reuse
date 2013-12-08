@@ -16,7 +16,7 @@ class AddictiveAndSubtractiveNumeralSystem
             if ($repetitions > 3) {
                 $representation = $this->subtractiveRepresentation($representation, $symbol,  $lastSymbol, $nextToLastSymbol);
             } else {
-                $representation[] = $this->additiveRepresentation($symbol, $repetitions); 
+                $representation = $this->additiveRepresentation($representation, $symbol, $repetitions); 
             }
             $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
@@ -25,9 +25,10 @@ class AddictiveAndSubtractiveNumeralSystem
         return implode('', $representation);
     }
 
-    private function additiveRepresentation($symbol, $repetitions)
+    private function additiveRepresentation($representation, $symbol, $repetitions)
     {
-        return str_repeat($symbol, $repetitions);
+        $representation[] = str_repeat($symbol, $repetitions);
+        return $representation;
     }
 
     private function subtractiveRepresentation($representation, $symbol, $lastSymbol, $nextToLastSymbol)
