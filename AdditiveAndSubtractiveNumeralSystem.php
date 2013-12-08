@@ -21,10 +21,6 @@ class AdditiveAndSubtractiveNumeralSystem
             foreach ($this->rules as $rule) {
                 $representation = $rule->representationFor($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
             }
-                /*
-                $representation = $this->subtractiveRule->representationFor($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
-                $representation = $this->additiveRule->representationFor($representation, $repetitions, $symbol); 
-                 */
             $number -= $containedAmount * $repetitions;
             $nextToLastSymbol = $lastSymbol;
             $lastSymbol = $symbol;
