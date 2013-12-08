@@ -9,18 +9,18 @@ class SubtractiveRule
         $this->lowerRepetitionsLimit = $lowerRepetitionsLimit;
     }
 
-    public function representationFor($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol, $thirdLastSymbol = null)
+    public function representationFor($representation, $repetitions, $symbol, $lastSymbol, $secondLastSymbol, $thirdLastSymbol = null)
     {
         // TODO: complex code, unit test it
         // TODO: seems coupled to pieces of $representation
         if ($repetitions >= $this->lowerRepetitionsLimit) {
             if (end($representation) == $lastSymbol) {
                 array_pop($representation);
-                if (end($representation) == "XL" && $thirdLastSymbol) {
+                if (end($representation) == $secondLastSymbol . $thirdLastSymbol && $thirdLastSymbol) {
                     array_pop($representation);
-                    $representation[] = 'IL';
+                    $representation[] = $symbol . $thirdLastSymbol;
                 } else {
-                    $representation[] = $symbol . $nextToLastSymbol;
+                    $representation[] = $symbol . $secondLastSymbol;
                 }
             } else {
                 $representation[] = $symbol . $lastSymbol;
