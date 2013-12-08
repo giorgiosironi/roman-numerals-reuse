@@ -21,11 +21,12 @@ class SubtractiveRule
         if ($repetitions < $this->lowerRepetitionsLimit) {
             return $representation;
         }
-        $symbol = str_repeat($symbol, 5-$repetitions);
-        return $this->foo($representation, $symbol, $largerSymbols, 1);
+
+        $whatToSubtract = str_repeat($symbol, 5-$repetitions);
+        return $this->foo($representation, $whatToSubtract, $largerSymbols, 1);
     }
 
-    private function foo($representation, $symbol, array $largerSymbols, $i)
+    private function foo($representation, $whatToSubtract, array $largerSymbols, $i)
     {
         $testForPresence = '';
         for ($j = $i; $j < count($largerSymbols); $j++) {
@@ -35,9 +36,9 @@ class SubtractiveRule
         if (end($representation) == $largerSymbols[$i]
             || end($representation) == $testForPresence) {
             array_pop($representation);
-            return $this->foo($representation, $symbol, $largerSymbols, $i + 1);
+            return $this->foo($representation, $whatToSubtract, $largerSymbols, $i + 1);
         } else {
-            $representation[] = $symbol . $largerSymbols[$i];
+            $representation[] = $whatToSubtract . $largerSymbols[$i];
             return $representation;
         }
     }

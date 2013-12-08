@@ -40,11 +40,9 @@ class SubtractiveRuleTest extends PHPUnit_Framework_TestCase
         );
     }
 
-    public function testSubtractsASymbolMultipletimesFromAnotherOne()
+    public function testSubtractsASymbolMultipleTimesFromAnotherOne()
     {
         $rule = new SubtractiveRule(2);
-        // wrong according to known Roman rules
-        // but this object may support different numeral systems
         $this->assertEquals(
             ['IIV'],
             $rule->representationFor([], 3, 'I', 'V', null)
