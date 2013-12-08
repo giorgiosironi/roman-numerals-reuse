@@ -10,16 +10,15 @@ class RomanNumeralSystem
             1 => 'I',
         ];
         $representation = '';
-        $numberToDecrease = $number;
         foreach ($symbols as $containedAmount => $symbol) {
-            $repetitions = floor($numberToDecrease / $containedAmount);
+            $repetitions = floor($number / $containedAmount);
             $representation .= str_repeat($symbol, $repetitions);
             /*
-            $numberToDecrease -= $containedAmount * $repetitions;
+            $number -= $containedAmount * $repetitions;
             */
-            while ($numberToDecrease >= $containedAmount) {
+            while ($number >= $containedAmount) {
             //    $representation .= $symbol;
-                $numberToDecrease -= $containedAmount;
+                $number -= $containedAmount;
             }
         }
         return $representation;
