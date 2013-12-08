@@ -10,15 +10,14 @@ class AncientRomanNumeralsTest extends PHPUnit_Framework_TestCase
                 1 => new Symbol('I'),
             ],
             [
-                new AdditiveRule()
+                new AdditiveRule(4)
             ]
         );
     }
 
     public function testSymbolsCanBeRepeatesMoreThan3Times()
     {
-        $this->markTestIncomplete();
-        $this->assertEquals('IIII', $this->system->convert(1));
+        $this->assertEquals('IIII', $this->system->convert(4));
     }
 
     // testSymbolsCannotBeRepeatedIfThereAreLargerSymbolsThatCoverTheSameAmount
