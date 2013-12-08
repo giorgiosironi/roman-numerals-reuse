@@ -5,13 +5,20 @@ class RomanNumeralSystem
     public function convert($number)
     {
         $symbols = [
-            1 => 'I',
-            5 => 'V',
             10 => 'X',
+            5 => 'V',
+            1 => 'I',
         ];
         $representation = '';
+        /*
         foreach ($symbols as $containedAmount => $symbol) {
+            while ($number >= $containedAmount) {
+                $representation .= $symbol;
+                $number -= $containedAmount;
+            }
         }
+         */
+        $representation = '';
         while ($number >= 10) {
             $representation .= $symbols[10];
             $number -= 10;
