@@ -46,6 +46,12 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('X', $this->system->convert(10));
     }
 
+    public function testSymbolsCanBeAddedTogetherToComposeNumbers()
+    {
+        $this->markTestIncomplete();
+        $this->assertEquals('XI', $this->system->convert(11));
+    }
+
     public function testThe10SymbolCanBeRepeatedToComposeLargerNumbers()
     {
         $this->markTestIncomplete();
