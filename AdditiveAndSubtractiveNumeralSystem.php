@@ -18,7 +18,9 @@ class AdditiveAndSubtractiveNumeralSystem
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
                 $maybeRepresentation = $this->subtractiveRule->subtractiveRepresentation($representation, $repetitions, $symbol, $lastSymbol, $nextToLastSymbol);
-                $representation = $maybeRepresentation;
+                if ($maybeRepresentation !== null) {
+                    $representation = $maybeRepresentation;
+                }
             } else {
                 $representation = $this->additiveRule->additiveRepresentation($representation, $repetitions, $symbol); 
             }
