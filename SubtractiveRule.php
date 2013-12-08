@@ -21,7 +21,7 @@ class SubtractiveRule
         if ($repetitions >= $this->lowerRepetitionsLimit) {
             if (end($representation) == $largerSymbols[1]) {
                 array_pop($representation);
-                if (end($representation) == $secondLastSymbol . $thirdLastSymbol && $thirdLastSymbol) {
+                if (isset($largerSymbols[3]) && end($representation) == $largerSymbols[2] . $largerSymbols[3]) {
                     array_pop($representation);
                     $representation[] = $symbol . $thirdLastSymbol;
                 } else {
