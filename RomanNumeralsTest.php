@@ -14,7 +14,8 @@ class RomanNumeralSystem
             $repetitions = floor($number / $containedAmount);
             if ($repetitions > 3) {
                 if (end($representation) == 'V') {
-                    $representation = ['IX'];
+                    array_pop($representation);
+                    $representation[] = 'IX';
                 } else {
                     $representation[] = 'I' . $lastSymbol;
                 }
