@@ -10,10 +10,11 @@ class RomanNumeralSystem
             10 => 'X',
         ];
         $representation = '';
-        if ($number >= 10) {
-            $representation = $symbols[10];
+        while ($number >= 10) {
+            $representation .= $symbols[10];
             $number -= 10;
-        } else if ($number >= 5) {
+        }
+        if ($number >= 5) {
             $representation = $symbols[5];
             $number -= 5;
         }
@@ -56,7 +57,6 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
     public function testThe10SymbolCanBeRepeatedToComposeLargerNumbers()
     {
-        $this->markTestIncomplete();
         $this->assertEquals('XX', $this->system->convert(20));
     }
 }
