@@ -22,6 +22,7 @@ class SubtractiveRule
             return $representation;
         }
 
+        return $this->foo($representation, $symbol, $largerSymbols, 1);
         if (end($representation) == $largerSymbols[1]) {
             array_pop($representation);
             if (isset($largerSymbols[3]) && end($representation) == $largerSymbols[2] . $largerSymbols[3]) {
@@ -38,11 +39,13 @@ class SubtractiveRule
 
     private function foo($representation, $symbol, array $largerSymbols, $i)
     {
-        if (isset($largerSymbols[$i]) && end($representation) == $largerSymbols[$i]) {
+        if (end($representation) == $largerSymbols[$i]
+        || (isset($largerSymbols[$i+1]) && end($representation) == $largerSymbols[$i] . $largerSymbols[$i+1])) {
             array_pop($representation);
             return $this->foo($representation, $symbol, $largerSymbols, $i + 1);
         } else {
             $representation[] = $symbol . $largerSymbols[$i];
+            return $representation;
         }
     }
 }
