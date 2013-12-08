@@ -17,6 +17,7 @@ class RomanNumeralSystem
                 $numberToDecrease -= $containedAmount;
             }
         }
+        return $representation;
         $representation = '';
         while ($number >= 10) {
             $representation .= $symbols[10];
