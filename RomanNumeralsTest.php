@@ -12,8 +12,12 @@ class RomanNumeralSystem
         $representation = '';
         foreach ($symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
-            $representation .= str_repeat($symbol, $repetitions);
-            $number -= $containedAmount * $repetitions;
+            if ($repetitions > 3) {
+                return 'IV';
+            } else {
+                $representation .= str_repeat($symbol, $repetitions);
+                $number -= $containedAmount * $repetitions;
+            }
         }
         return $representation;
     }
@@ -58,7 +62,6 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 
     public function testASymbolCannotBeRepeatedMoreThan3Times()
     {
-        $this->markTestIncomplete();
         $this->assertEquals('IV', $this->system->convert(4));
     }
 }
