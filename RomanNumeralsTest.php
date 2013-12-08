@@ -10,15 +10,18 @@ class RomanNumeralSystem
 
 class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
+    protected function setUp()
+    {
+        $this->system = new RomanNumeralSystem();
+    }
+
     public function testOneIsConvertedToASingleI()
     {
-        $numericalSystem = new RomanNumeralSystem();
-        $this->assertEquals('I', $numericalSystem->convert(1));
+        $this->assertEquals('I', $this->system->convert(1));
     }
 
     public function testTwoIsConvertedToAPairOfI()
     {
-        $numericalSystem = new RomanNumeralSystem();
-        $this->assertEquals('II', $numericalSystem->convert(2));
+        $this->assertEquals('II', $this->system->convert(2));
     }
 }
