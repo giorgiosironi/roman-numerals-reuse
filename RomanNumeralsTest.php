@@ -12,13 +12,13 @@ class RomanNumeralSystem
         $representation = '';
         $numberToDecrease = $number;
         foreach ($symbols as $containedAmount => $symbol) {
-            $repetitions = floor($number / $containedAmount);
-            /*
+            $repetitions = floor($numberToDecrease / $containedAmount);
             $representation .= str_repeat($symbol, $repetitions);
+            /*
             $numberToDecrease -= $containedAmount * $repetitions;
             */
             while ($numberToDecrease >= $containedAmount) {
-                $representation .= $symbol;
+            //    $representation .= $symbol;
                 $numberToDecrease -= $containedAmount;
             }
         }
