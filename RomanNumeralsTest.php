@@ -61,13 +61,13 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('XX', $this->system->convert(20));
     }
 
-    public function testASymbolCannotBeRepeatedMoreThan3Times()
+    public function testASymbolCannotBeRepeatedMoreThan3TimesAndMustBeSubtractedFromTheNextSymbol()
     {
         $this->assertEquals('IV', $this->system->convert(4));
     }
 
     // TODO: naming of these 2 tests
-    public function testASymbolMustBeSubtractedFromTheLargerSymbolNearestToTheNumber()
+    public function testASymbolCanBeSubtractedFromASymbolDistant2InTheScale()
     {
         $this->markTestIncomplete();
         $this->assertEquals('IX', $this->system->convert(9));
