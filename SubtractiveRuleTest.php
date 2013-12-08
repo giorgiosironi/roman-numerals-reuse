@@ -49,6 +49,19 @@ class SubtractiveRuleTest extends PHPUnit_Framework_TestCase
         );
     }
 
+    public function testMultipleSymbolsCanBeSubtractedFromALargerOneToGetAShorterRepresentation()
+    {
+        $rule = new SubtractiveRule(2);
+        $this->assertNotEquals(
+            ['XXL', 'IIX'],
+            $rule->representationFor(['XXL', 'V'], 3, 'I', 'V', null)
+        );
+        $this->assertEquals(
+            ['IIXL'],
+            $rule->representationFor(['XXL', 'V'], 3, 'I', 'V', null)
+        );
+    }
+
     public function testTheDistanceBetweenSymbolsThatCanBePutTogetherForSubtractionIsArbitrary()
     {
         $this->markTestIncomplete();

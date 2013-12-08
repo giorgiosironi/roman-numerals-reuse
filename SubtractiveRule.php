@@ -31,6 +31,7 @@ class SubtractiveRule
         $testForPresence = '';
         for ($j = $i; $j < count($largerSymbols); $j++) {
             $testForPresence .= $largerSymbols[$j];
+            var_dump($testForPresence);
             if (end($representation) == $testForPresence) {
                 array_pop($representation);
                 return $this->foo($representation, $whatToSubtract, $largerSymbols, $i + 1);
