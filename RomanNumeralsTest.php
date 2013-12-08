@@ -1,6 +1,6 @@
 <?php
 
-class RomanNumeralSystem
+class AddictiveAndSubtractiveNumeralSystem
 {
     public function __construct($symbols)
     {
@@ -50,7 +50,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        $this->system = new RomanNumeralSystem(
+        $this->system = new AddictiveAndSubtractiveNumeralSystem(
             $symbols = [
                 100 => new Symbol('C'),
                 50 => new Symbol('L'),
