@@ -13,12 +13,12 @@ class RomanNumeralSystem
         foreach ($symbols as $containedAmount => $symbol) {
             $repetitions = floor($number / $containedAmount);
             $representation .= str_repeat($symbol, $repetitions);
-            /*
             $number -= $containedAmount * $repetitions;
+            /*
             */
             while ($number >= $containedAmount) {
             //    $representation .= $symbol;
-                $number -= $containedAmount;
+            //    $number -= $containedAmount;
             }
         }
         return $representation;
