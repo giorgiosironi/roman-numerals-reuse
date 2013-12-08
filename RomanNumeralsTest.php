@@ -1,6 +1,6 @@
 <?php
 
-class RomanNumericalSystem
+class RomanNumeralSystem
 {
     public function convert()
     {
@@ -12,7 +12,7 @@ class RomanNumeralsTest extends PHPUnit_Framework_TestCase
 {
     public function testOneIsConvertedToASingleI()
     {
-        $numericalSystem = new RomanNumericalSystem();
+        $numericalSystem = new RomanNumeralSystem();
         $this->assertEquals('I', $numericalSystem->convert(1));
     }
 }
